@@ -17,7 +17,6 @@ void	ft_putchar(char c)
 	va_list s;
 	va_start(s,str);
 	sr = va_arg(s,void *);
-
 	j = sizeof(sr);
 	while(i < 2)
 	{
