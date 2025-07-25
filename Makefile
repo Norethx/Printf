@@ -1,5 +1,5 @@
 NAME := libftprintf.a
-LIBFT := libft.H
+LIBFT := libft.a
 CC := cc
 CFLAGS := -Wall -Wextra -Werror -c
 INCLUDES := includes
@@ -51,16 +51,15 @@ ft_lstmap_bonus.o \
 ft_lltoa.o \
 ft_Uitoa.o \
 ft_Uitoa_base.o \
-ft_Ulltoa_base.o
+ft_Ulltoa_base.o \
+ft_xUlltoa_base.o
 
 MANDATORY := ft_printf.o
-
-# DIR_OBJTS := $(addprefix ./$(INCLUDES)/,$(OBJTS))
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MANDATORY)
-		ar rcs $(NAME) $(MANDATORY) $(LIBFT) $(OBJTS)
+		ar rcs $(NAME) $(MANDATORY) $(LIBFT)
 
 $(LIBFT): $(OBJTS)
 		ar rcs $(LIBFT) $(OBJTS)
@@ -68,8 +67,6 @@ $(LIBFT): $(OBJTS)
 %.o: ./srcs/%.c
 		$(CC) $(CPPFLAGS) $(CFLAGS) $< -o $@
 
-# bonus:
-# 		$(MAKE) OBJTS="$(OBJTS) $(BONUS)" all
 
 .PHONY: clean
 clean:

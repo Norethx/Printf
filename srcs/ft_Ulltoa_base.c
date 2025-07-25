@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:39:13 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/24 19:36:04 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 14:02:28 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,9 @@ char	*ft_Ulltoa_base(unsigned long long n, char *base)
 	if (!base || !ft_verify_base(base))
 		return (NULL);
 	len_b = ft_strlen(base);
-	i = ft_lenint_base(n, len_b) + 2;
+	i = ft_lenint_base(n, len_b);
 	nbr = (char *)calloc(1, i + 1);
 	nbr[i] = 0;
-	nbr[0] = '0';
-	nbr[1] = 'x';
 	while (n > 0)
 	{
 		i--;
