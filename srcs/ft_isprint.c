@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 12:13:11 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/19 18:35:32 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 11:44:03 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	return ((unsigned char)c >= 32 && (unsigned char)c < 127);
+	return (c >= 32 && c < 127);
 }

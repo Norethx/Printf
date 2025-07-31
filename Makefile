@@ -49,17 +49,17 @@ ft_lstclear_bonus.o \
 ft_lstiter_bonus.o \
 ft_lstmap_bonus.o \
 ft_lltoa.o \
-ft_Uitoa.o \
-ft_Uitoa_base.o \
-ft_Ulltoa_base.o \
-ft_xUlltoa_base.o
+ft_uitoa.o \
+ft_uitoa_base.o \
+ft_ulltoa_base.o \
+ft_memtoa_base.o
 
 MANDATORY := ft_printf.o
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MANDATORY)
-		ar rcs $(NAME) $(MANDATORY) $(LIBFT)
+		ar rcs $(NAME) $(MANDATORY) $(OBJTS)
 
 $(LIBFT): $(OBJTS)
 		ar rcs $(LIBFT) $(OBJTS)
@@ -70,7 +70,7 @@ $(LIBFT): $(OBJTS)
 
 .PHONY: clean
 clean:
-		rm -f $(OBJTS)
+		rm -f $(OBJTS) $(MANDATORY)
 
 .PHONY: fclean
 fclean: clean

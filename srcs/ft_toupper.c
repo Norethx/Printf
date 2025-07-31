@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:08:31 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/15 12:41:37 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 11:46:25 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;
-	return ((unsigned char) c);
+	return (c);
 }

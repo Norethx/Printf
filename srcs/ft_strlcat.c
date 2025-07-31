@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 11:21:39 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/22 22:51:04 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:03:51 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t			len_src;
 	unsigned long	i;
 
-	if (!dest || size <= ft_strlen(dest))
+	if (size <= ft_strlen(dest))
 		return (ft_strlen(src) + size);
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);

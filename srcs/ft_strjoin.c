@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:46:05 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/16 14:05:39 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/24 10:28:41 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s2 = ft_strlen(s2);
 	i = 0;
 	new_str = ft_calloc(1, ((len_s1 + len_s2 + 1)));
+	if (!new_str)
+		return (NULL);
 	while (s1[i] != '\0')
 	{
 		new_str[i] = s1[i];

@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:38:25 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/21 16:18:39 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 11:46:20 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;
-	return ((unsigned char) c);
+	return (c);
 }

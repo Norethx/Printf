@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 13:05:01 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/18 20:42:00 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:14:57 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	len_s = ft_strlen(s);
 	i = 0;
+	if ((start > len_s) || *s == 0)
+		return (ft_strdup(""));
 	if (len > (len_s + 1) - (start))
 		new_str = ft_calloc(1, (len_s - start) + 1);
-	else if ((start > len_s) || *s == 0)
-		return (ft_calloc(1, 0));
 	else
 		new_str = ft_calloc(1, len + 1);
+	if (!new_str)
+		return ((void *)0);
 	while (i < len && s[start + i] != '\0' && (start + i) <= len_s)
 	{
 		new_str[i] = s[start + i];

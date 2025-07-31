@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_Uitoa.c                                         :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 12:39:13 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/24 16:37:26 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/07/31 20:10:36 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_lenint(unsigned int n)
 	return (qt_char);
 }
 
-char	*ft_Uitoa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	unsigned int	i;
 	char			*nbr;
