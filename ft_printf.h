@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:18:06 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/31 20:29:07 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:36:42 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "includes/libft.h"
+# include "libft/libft.h"
 # include <stdarg.h>
 
 int	ft_printf(const char *str, ...);

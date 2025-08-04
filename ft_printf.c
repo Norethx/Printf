@@ -6,7 +6,7 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:51:10 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/07/31 20:13:37 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/08/04 13:47:50 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_aux_printf(t_list **new, va_list args, const char *str,
 	{
 		if (str[i++] == '%' && str[i] != 0)
 		{
-			if (i > 0 && flag > 0)
+			if (flag > 0)
 				ft_lstadd_back(new, ft_lstnew(ft_substr(str, i - 1 - flag,
 							flag)));
 			if (ft_strchr("cdiuxXps", str[i]) && str[i] != 0)
@@ -55,7 +55,7 @@ static void	ft_aux_printf(t_list **new, va_list args, const char *str,
 				ft_lstadd_back(new, ft_lstnew(ft_printf_digit(ls_va, str[i])));
 				ls_va = va_arg(args, void *);
 			}
-			if (ft_strchr("%", str[i++]) && str[i - 1] != 0)
+			if (ft_strchr("%", str[i++]))
 				ft_lstadd_back(new, ft_lstnew(ft_strdup("%")));
 			flag = -1;
 		}
@@ -88,11 +88,11 @@ static unsigned int	ft_putstr_lst(void *s)
 static char	*ft_printf_digit(void *v_print, char c)
 {
 	if (c == 'd')
-		return (ft_lltoa((int)(long long)v_print));
+		return (ft_itoa((int)(long long)v_print));
 	if (c == 'i')
-		return (ft_itoa((long long)v_print));
+		return (ft_itoa((int)(long long)v_print));
 	if (c == 'u')
-		return (ft_uitoa((long long)v_print));
+		return (ft_uitoa_base((long long)v_print, "0123456789"));
 	if (c == 'x')
 		return (ft_uitoa_base((long long)v_print, "0123456789abcdef"));
 	if (c == 'X')
@@ -112,9 +112,3 @@ static char	*ft_printf_digit(void *v_print, char c)
 				1));
 	return (ft_strdup(""));
 }
-
-// int	main(void)
-// {
-// 	ft_printf("\n%p",&ULLONG_MAX);
-// 	printf("\n%p",&ULLONG_MAX);
-// }
