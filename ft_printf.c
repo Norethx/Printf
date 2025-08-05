@@ -6,12 +6,11 @@
 /*   By: rgomes-d <rgomes-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:51:10 by rgomes-d          #+#    #+#             */
-/*   Updated: 2025/08/04 13:47:50 by rgomes-d         ###   ########.fr       */
+/*   Updated: 2025/08/05 16:05:29 by rgomes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
 
 static char			*ft_printf_digit(void *v_print, char c);
 static unsigned int	ft_putstr_lst(void *s);
@@ -50,13 +49,10 @@ static void	ft_aux_printf(t_list **new, va_list args, const char *str,
 			if (flag > 0)
 				ft_lstadd_back(new, ft_lstnew(ft_substr(str, i - 1 - flag,
 							flag)));
-			if (ft_strchr("cdiuxXps", str[i]) && str[i] != 0)
-			{
+			if (ft_strchr("cdiuxXps%", str[i]) && str[i] != 0)
 				ft_lstadd_back(new, ft_lstnew(ft_printf_digit(ls_va, str[i])));
+			if (ft_strchr("cdiuxXps", str[i++]) && str[i] != 0)
 				ls_va = va_arg(args, void *);
-			}
-			if (ft_strchr("%", str[i++]))
-				ft_lstadd_back(new, ft_lstnew(ft_strdup("%")));
 			flag = -1;
 		}
 		flag++;
@@ -108,7 +104,8 @@ static char	*ft_printf_digit(void *v_print, char c)
 	if (c == 's')
 		return (ft_strdup(v_print));
 	if (c == 'c')
-		return ((char *)ft_memset(ft_calloc(2, 1), (unsigned long long)v_print,
-				1));
+		return ((char *)ft_memset(ft_calloc(2, 1), (unsigned long)v_print, 1));
+	if (c == '%')
+		return (ft_strdup("%"));
 	return (ft_strdup(""));
 }
